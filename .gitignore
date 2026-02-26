@@ -24,4 +24,3 @@ dist-ssr
 *.sw?
 
 /src/pages/REFCLAUDE.tsx
-/src/App.tsx
