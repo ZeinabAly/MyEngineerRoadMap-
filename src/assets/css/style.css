@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+body{
+    @apply bg-[#0d0f14] text-[#fff] py-7 overflow-x-hidden;
+}
+
+main{
+    @apply py-5
+}
+
+.content{
+    @apply w-[80%] mx-auto flex justify-center flex-col items-center
+}
+
+/* HEADER */
+header{
+    @apply py-5;
+
+    .subtitle{
+        @apply pb-1 text-center text-xs text-[#666] uppercase tracking-widest
+    }
+    .title{
+        @apply pb-5 text-center text-3xl font-bold;
+        fontSize: "clamp(1.6rem, 4vw, 2.4rem)";
+        fontFamily: "'Georgia', serif";
+    }
+    .skillRangeContent{
+    @apply h-1 w-[400px] bg-gray-400 my-2 rounded-full
+}
+}
+/* FIN HEADER */
+
+
+/* L'ENSEMBLE DES CATEGORIES */
+.categoriesContent{
+    @apply flex flex-wrap justify-center gap-3
+}
+.category{
+    @apply w-[410px] border-[1.5px] border-gray-400 m-2 px-5 pb-5 rounded-sm leading-8 text-[14px]
+
+}
+
+.category .catTitle{
+    @apply flex justify-start items-center gap-2
+}
+
+.category .label{
+    @apply font-bold text-xl
+}
+
+.category .catHeader{
+    @apply flex justify-between items-center
+}
+
+.skillRangeContent{
+    @apply h-0.5 w-20 bg-white my-5 rounded-full
+}
+.skillRange{
+    @apply bg-red-500 rounded-full
+}
+.skillItem{
+    @apply flex gap-2 items-center 
+}
+
+.itemContent{
+    @apply flex gap-2
+}
+
+.checkbox{
+ @apply bg-red-500
+}
