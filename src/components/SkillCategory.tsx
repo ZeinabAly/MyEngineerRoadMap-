@@ -3,10 +3,15 @@ import SkillItem from './SkillItem';
 import {skillsData} from "../data/skills"
 
 
-const SkillCategory = () => {
+type SkillProps = {
+  checked: Record<string, boolean>
+  toggle: (id: string) => void
+}
+
+const SkillCategory = ({checked, toggle}: SkillProps) => {
 
     const [data, setData] = useState(skillsData);
-    const [checked, setChecked] = useState<Record<string, boolean>>({}) //checked skill array
+    // const [checked, setChecked] = useState<Record<string, boolean>>({}) //checked skill array
 
     return(
         <div className='categoriesContent'>
@@ -18,13 +23,10 @@ const SkillCategory = () => {
                 const acquiredSkills = category.skills.filter(
                     (skill) => checked[skill.id]
                 ).length
-                // Toggle pour check un skill
-                const toggle = (id: string) => {
-                    setChecked(prev => ({...prev, [id]: !prev[id]}))
-                }
+                
 
                 return (
-                    <div className='category'>
+                    <div className='category' style={{ backgroundColor: category.bg }}>
                         <div className="catHeader">
                             <div className="catTitle">
                                 <p>{category.icon}</p>
@@ -36,8 +38,19 @@ const SkillCategory = () => {
                                     <div className="skillRange" style={{height: "100%", width: `${(acquiredSkills/totalSkills) * 100}%`}}></div>
                                 </div>
                             </div>
+                            
                         </div>
-                        {category.skills.map((item) => <SkillItem key={item.id} item={item} checked={!!checked[item.id]} onToggle={toggle} />)}
+                        
+                        <div className="categorySkillsContent">
+                            {category.skills.map((item) => <SkillItem key={item.id} item={item} checked={!!checked[item.id]} onToggle={toggle} />)}
+                        
+                            {/* BADGE */}
+                            <div className="badgeContent">
+                                <div className='badge' style={{ backgroundColor: category.badge === "Important" ? "#fb2c36" : "#16a34a" }}>
+                                    <p className="texte">{category.badge}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 )
             })

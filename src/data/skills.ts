@@ -6,6 +6,7 @@ export const skillsData = {
     accent: "#f5d76e",
     bg: "rgba(232,197,71,0.08)",
     border: "rgba(232,197,71,0.3)",
+    badge: "Important",
     skills: [
       { id: "f1", label: "Algorithmique & structures de données" },
       { id: "f2", label: "Git & versioning" },
@@ -21,11 +22,12 @@ export const skillsData = {
   },
   web: {
     label: "Développement Web",
-    icon: "🌐",
+    icon: "", //🌐
     color: "#4ecdc4",
     accent: "#7eede7",
     bg: "rgba(78,205,196,0.08)",
     border: "rgba(78,205,196,0.3)",
+    badge: "Important",
     skills: [
       { id: "w1", label: "HTML5 & CSS3 (sémantique, flexbox, grid)" },
       { id: "w2", label: "JavaScript ES6+" },
@@ -41,11 +43,12 @@ export const skillsData = {
   },
   mobile: {
     label: "Applications Mobiles",
-    icon: "📱",
+    icon: "",
     color: "#ff6b9d",
     accent: "#ff9dbe",
     bg: "rgba(255,107,157,0.08)",
     border: "rgba(255,107,157,0.3)",
+    badge: "Facultatif",
     skills: [
       { id: "m1", label: "React Native ou Flutter" },
       { id: "m2", label: "Swift (iOS natif)" },
@@ -61,11 +64,12 @@ export const skillsData = {
   },
   devops: {
     label: "Systèmes / DevOps",
-    icon: "⚙️",
+    icon: "", //⚙️
     color: "#a855f7",
     accent: "#c084fc",
     bg: "rgba(168,85,247,0.08)",
     border: "rgba(168,85,247,0.3)",
+    badge: "Important",
     skills: [
       { id: "d1", label: "Linux & Bash scripting" },
       { id: "d2", label: "Docker & containerisation" },
@@ -81,11 +85,12 @@ export const skillsData = {
   },
   ia: {
     label: "IA / Data",
-    icon: "🤖",
+    icon: "",
     color: "#fb923c",
     accent: "#fca46a",
     bg: "rgba(251,146,60,0.08)",
     border: "rgba(251,146,60,0.3)",
+    badge: "Facultatif",
     skills: [
       { id: "i1", label: "Python (avancé)" },
       { id: "i2", label: "Statistiques & Probabilités" },

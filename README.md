@@ -64,7 +64,8 @@ src/
 ├── components/
 │   ├─ Header/
 │   ├── SkillCategory/
-│   └── SkillItem/
+    ├── SkillItem/
+│   └── Footer/
 ├── data/
 │   └── skills.ts
 ├── context/
@@ -86,6 +87,16 @@ src/
 - [ ] Export PDF de la progression
 - [ ] Ajout de ressources (liens, cours) par compétence
 - [ ] Version mobile améliorée
+- [ ] Barre de recherche pour filtrer les compétences
+- [ ] Bouton pour tout cocher / tout décocher par catégorie
+- [ ] Ajouter / Modifier une compétence ou une catégorie
+- [ ] Mode sombre / clair
+- [ ] Animations quand on coche une compétence
+- [ ] Un message de félicitations quand une catégorie est complète
+- [ ] Système de priorités — marquer une compétence comme "en cours", "à faire", "maîtrisée"
+- [ ] Système d'authentification et base de données
+- [ ] Système de partage, envoyer la progression à quelqu'un
+
 
 ---
 
