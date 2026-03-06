@@ -7,7 +7,7 @@ type HeaderProps = {
 }
 
 const Header = ({checked}: HeaderProps) => {
-    const [data, setData] = useState(skillsData);
+    const [data] = useState(skillsData);
 
     // flatMap fusionne tous les tableaux de skills en un seul
     // Là on souhaite afficher le nombre total de competences toutes categories confondues

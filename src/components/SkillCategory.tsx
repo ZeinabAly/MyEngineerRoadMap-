@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import SkillItem from './SkillItem';
 import {skillsData} from "../data/skills"
 
@@ -10,7 +10,7 @@ type SkillProps = {
 
 const SkillCategory = ({checked, toggle}: SkillProps) => {
 
-    const [data, setData] = useState(skillsData);
+    const [data] = useState(skillsData);
     // const [checked, setChecked] = useState<Record<string, boolean>>({}) //checked skill array
 
     return(
