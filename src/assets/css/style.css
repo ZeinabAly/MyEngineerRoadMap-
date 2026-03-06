@@ -22,8 +22,8 @@ header{
     }
     .title{
         @apply pb-3 text-center text-4xl font-bold;
-        fontSize: "clamp(1.6rem, 4vw, 2.4rem)";
-        fontFamily: "'Georgia', serif";
+        font-size: "clamp(1.6rem, 4vw, 2.4rem)";
+        font-family: "'Georgia', serif";
     }
     .texte{
         @apply pb-2 text-center text-xs text-[#ccc] tracking-widest
