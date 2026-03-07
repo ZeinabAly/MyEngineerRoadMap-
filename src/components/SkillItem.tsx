@@ -34,7 +34,7 @@ type SkillItemProps = {
 const SkillItem = ({ item, checked, onToggle }: SkillItemProps) => {
   return (
     <div onClick={() => onToggle(item.id)} className="itemContent">
-      <input type="checkbox" style={{ accentColor: "#fb2c36" }}  className="checkbox" checked={checked} onChange={() => {}} />
+      <input type="checkbox" style={{ accentColor: "var(--cat-fondamentaux)" }}  className="checkbox" checked={checked} onChange={() => {}} />
       <span>{item.label}</span>
     </div>
   )

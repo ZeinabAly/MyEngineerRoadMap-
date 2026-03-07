@@ -1,36 +1,166 @@
 @import "tailwindcss";
 
-body{
-    @apply bg-[#0d0f14] text-[#fff] py-7 overflow-x-hidden opacity-80 absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px];
-    
+
+:root {
+  /* ── Arrière-plans ── */
+  --bg-primary:     #080c14;
+  --bg-surface:     #0e1420;
+  --bg-hover:       rgba(255, 255, 255, 0.03);
+
+  /* ── Textes ── */
+  --text-primary:   #e8e8e8;
+  --text-muted:     #556677;
+  --text-faint:     #333;
+
+  /* ── Bordures ── */
+  --border:         rgba(255, 255, 255, 0.07);
+  --border-hover:   rgba(255, 255, 255, 0.12);
+
+  /* ── Catégories ── */
+  --cat-fondamentaux: #e8c547;
+  --cat-web:          #4ecdc4;
+  --cat-mobile:       #ff6b9d;
+  --cat-devops:       #a855f7;
+  --cat-ia:           #fb923c;
+
+  /* ── Dégradés ── */
+  --gradient-progress: linear-gradient(90deg, #e8c547, #fb923c);
+  --gradient-glow:     radial-gradient(ellipse, rgba(232, 197, 71, 0.08) 0%, transparent 70%);
+
+  /* ── Niveau ── */
+  --level-novice:       #aaaaaa;
+  --level-apprenti:     #e8c547;
+  --level-intermediaire:#4ecdc4;
+  --level-confirme:     #a855f7;
+  --level-expert:       #fb923c;
 }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body{
+    @apply bg-[#0d0f14] text-[var(--text-primary)] py-7 overflow-x-hidden opacity-80 absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px];
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+}
+
 
 main{
     @apply py-5
 }
 
 .content{
-    @apply w-[80%] mx-auto flex justify-center flex-col items-center
+    @apply md:w-[80%] w-[95%] mx-auto flex justify-center flex-col items-center
 }
 
 /* HEADER */
 header{
-    @apply py-5;
+    @apply py-5 mb-5 w-full border-b border-gray-600;
 
     .subtitle{
-        @apply pb-1 text-center text-xs text-[#666] uppercase tracking-widest font-semibold
+        @apply pb-1 text-center text-[12px] text-[var(--cat-fondamentaux)] uppercase tracking-widest font-semibold flex justify-center items-center gap-3 
+    }
+    .subtitle::after, .subtitle::before{
+        content: '';
+        display: inline-block;
+        width: 30px; height: 2px;
+        background: var(--cat-fondamentaux);
     }
     .title{
         @apply pb-3 text-center text-4xl font-bold;
-        font-size: "clamp(1.6rem, 4vw, 2.4rem)";
-        font-family: "'Georgia', serif";
+        font-size: clamp(32px, 5vw, 52px);
+        font-family: 'Syne', sans-serif;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
     }
     .texte{
         @apply pb-2 text-center text-xs text-[#ccc] tracking-widest
     }
-    .skillRangeContent{
-        @apply h-1 md:w-[500px] w-[100%] bg-gray-400 my-2 rounded-full
+
+    .global-progress{
+        @apply w-full my-5 w-[90%] max-w-[380px] sm:max-w-[400px] md:max-w-[50%] mx-auto flex items-end justify-center gap-5 ;
+
     }
+    .progressChill1{
+        @apply w-full min-w-[200px] mx-auto ;
+    }
+    .progressLabelContent{
+        @apply w-full flex justify-between items-center gap-3 text-xs;
+    }
+    .progressTextes{
+        @apply text-xs flex gap-2 text-gray-300
+    }
+
+    .skillRangeContent{
+        @apply h-[6px] w-full mx-auto bg-gray-600 my-2 rounded-full 
+    }
+    .skillRange{
+        @apply rounded-full;
+        background: var(--gradient-progress);
+    }
+
+    .level-pill {
+        background: rgba(232,197,71,0.12);
+        border: 1px solid rgba(232,197,71,0.25);
+        color: #e8c547;
+        font-size: 11px;
+        padding: 3px 10px;
+        border-radius: 20px;
+        white-space: nowrap;
+    }
+    /* FILTRES ET LEGENDES */
+    .filter_legend{
+        @apply md:max-w-[70%] mx-auto flex md:flex-row flex-col justify-between items-center text-center md:text-left flex-wrap gap-5;
+        font-family: 'DM Sans', sans-serif;
+    }
+
+    /* FILTRES */
+    .filtre_btns {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .filter-btn {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        color: var(--muted);
+        font-family: 'DM Sans', sans-serif;
+        font-size: 11px;
+        padding: 6px 14px;
+        cursor: pointer;
+        transition: all 0.2s;
+        letter-spacing: 0.03em;
+    }
+    .filter-btn:hover, .filter-btn.active {
+        background: rgba(232,197,71,0.1);
+        border-color: rgba(232,197,71,0.3);
+        color: #e8c547;
+    }
+
+    /* LEGENDE */
+  
+    .stats-title{
+        @apply my-2
+    }
+    .legendItems{
+        @apply flex items-center gap-2 text-[11px]
+    }
+    .legend-item{
+        @apply flex items-center gap-2
+    }
+    .legend-dot{
+        @apply bg-[var(--bg-hover)] border-[1.5px] w-3 h-3 rounded-xs
+    }
+    
+    .headerScroll{
+        @apply fixed top-0 left-0 right-0 z-50 bg-[var(--bg-primary)]/90 backdrop-blur-md 
+        border-b border-white/50
+        px-10 pb-0 pt-5
+        transition-all duration-400 border-b border-gray-600;
+
+    }
+    /* FILTER */
 }
 /* FIN HEADER */
 
@@ -40,7 +170,7 @@ header{
     @apply flex flex-wrap justify-center gap-3
 }
 .category{
-    @apply w-[410px] border-[1.5px] border-gray-400 m-2 rounded-xl leading-8 text-[14px]
+    @apply md:w-[410px] w-[80%] min-w-[320px] mx-auto border-[1.5px] border-gray-400 m-2 rounded-xl leading-8 text-[14px]
 
 }
 
@@ -53,12 +183,19 @@ header{
 }
 
 .category .catHeader{
-    @apply flex justify-between items-center border-b px-5 py-2;
+    @apply flex justify-between items-center border-b px-3 py-2;
 }
 
 .category .categorySkillsContent{
     position: relative;
     padding-bottom: 30px;
+}
+
+.skillRangeContent{
+    @apply h-0.5 w-20 bg-white my-5 rounded-full
+}
+.skillRange{
+    @apply bg-[var(--cat-fondamentaux)] rounded-full
 }
 
 .badge{
@@ -80,12 +217,7 @@ header{
     z-index: 100;
 }
 
-.skillRangeContent{
-    @apply h-0.5 w-20 bg-white my-5 rounded-full
-}
-.skillRange{
-    @apply bg-[#fb2c36] rounded-full
-}
+
 .skillItem{
     @apply flex gap-2 items-center 
 }

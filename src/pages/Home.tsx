@@ -16,8 +16,8 @@ const Home = () => {
 
     return (
         <div className=''>
-            <div className="content">
                 <Header checked={checked} />
+            <div className="content">
                 <SkillCategory checked={checked} toggle={toggle} />
             </div>
             <Footer />
