@@ -99,14 +99,14 @@ const Header = ({checked}: HeaderProps) => {
 
 
             {/* A AFFICHER AU SCROLL */}
-            <div className={`headerScroll ${isScrolled ? "visible opacity-100 translate-y-0" : "hidden opacity-0 -translate-y-full pointer-events-none"}`}>
-                    <p className='subtitle'>Roadmap personnelle</p>
+            {/* <div className={`headerScroll ${isScrolled ? "visible opacity-100 translate-y-0" : "hidden opacity-0 -translate-y-full pointer-events-none"}`}>
+                <p className='subtitle'>Roadmap personnelle</p>
                 <div className="global-progress">
                     <div className="progressChill1">
                         <div className="progressLabelContent">
                             <div className="progressTextes">
                                 <p>{totalAcquiredSkills} / {nbreTotal} Compétences</p>
-                                {/* <p>Compétences</p> */}
+                                
                             </div>
                             <div className="">{Math.round((totalAcquiredSkills / nbreTotal) * 100)}%</div>
                         </div>
@@ -114,11 +114,8 @@ const Header = ({checked}: HeaderProps) => {
                             <div className="skillRange" style={{height: "100%", width: `${(totalAcquiredSkills / nbreTotal) * 100}%`}}></div>
                         </div>
                     </div>
-                    {/* <div className="progressChill2">
-                        <p className='level-pill'>Intermediaire</p>
-                    </div> */}
                 </div>
-            </div>
+            </div> */}
         </header>
     );
 };

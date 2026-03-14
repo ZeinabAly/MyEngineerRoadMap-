@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 /src/pages/REFCLAUDE.tsx
+/src/components/JeuPIX.tsx
